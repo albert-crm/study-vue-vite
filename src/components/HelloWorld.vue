@@ -4,10 +4,17 @@ import { ref } from 'vue'
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+//在Vue组件中使用环境变量
+const apiUrl=import.meta.env.VITE_APP_API_URL
+
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
+
+  <!-- 在Vue组件中使用环境变量： -->
+  <h1>{{ apiUrl }}</h1>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>

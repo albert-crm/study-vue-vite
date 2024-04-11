@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
+//NODE_ENV不是以VITE开头，所以不能识别
+const nodeEnv=import.meta.env.NODE_ENV
 </script>
 
 <template>
@@ -11,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <h1>{{ nodeEnv }}</h1>
   <HelloWorld msg="Vite + Vue" />
 </template>
 
